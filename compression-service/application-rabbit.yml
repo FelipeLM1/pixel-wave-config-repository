@@ -1,0 +1,21 @@
+server:
+  servlet:
+    context-path: /dev/pixelwave/api/compression
+  port: "8081"
+management:
+  health:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+
+spring:
+  rabbitmq:
+    username: rabbitmq
+    password: rabbitmq
+    host: localhost
+    port: 5672
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
