@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: 'true'
+          lower-case-service-id: 'true'
+    global-filters:
+      - name: Retry
+        args:
+          retries: 3
+          statuses: BAD_GATEWAY
+          methods: GET,POST
+          backoff:
+            firstBackoff: 10ms
+            maxBackoff: 50ms
+            factor: 2
+            basedOnPreviousValue: false
+server:
+  port: '8070'
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
