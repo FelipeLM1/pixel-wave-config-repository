@@ -16,6 +16,19 @@ spring:
             maxBackoff: 50ms
             factor: 2
             basedOnPreviousValue: false
+      - name: RequestRateLimiter
+        args:
+          redis-rate-limiter:
+            replenishRate: 400
+            burstCapacity: 450
+            requestedTokens: 1
+  data:
+    redis:
+      connect-timeout: 2s
+      host: localhost
+      port: 6379
+      timeout: 1s
+
 server:
   port: '8070'
 eureka:
