@@ -11,29 +11,17 @@ spring:
       ddl-auto: validate
     show-sql: "true"
   application:
-    name: storage-service-prod
+    name: storage-service
   datasource:
-    password: "123"
-    username: postgres
-    url: jdbc:postgresql://localhost:5441/postgres
+    password: pixelwave
+    username: pixelwave
+    url: jdbc:postgresql://localhost:5440/pixelwave
 image:
   storage:
     directory: uploads/
 server:
-  servlet:
-    context-path: /rabbit/pixelwave/api/storage
   port: "8080"
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
-rabbitmq:
-    username: rabbitmq
-    password: rabbitmq
-    host: localhost
-    port: 5672
-  cloud:
-    stream:
-      bindings:
-        imageCreatedSupplier-out-0: ## Nome do BEAN
-          destination: storage.event.image-created
