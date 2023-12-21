@@ -21,8 +21,6 @@ spring:
     hibernate:
       ddl-auto: validate
     show-sql: "true"
-  application:
-    name: storage-service-prod
   datasource:
     password: "123"
     username: postgres
