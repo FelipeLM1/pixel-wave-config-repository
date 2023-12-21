@@ -1,7 +1,7 @@
 server:
   servlet:
-    context-path: /rabbit/pixelwave/api/compression
-  port: "8081"
+    context-path: /rabbit/pixelwave/api/color
+  port: "8083"
 management:
   health:
   endpoint:
@@ -19,9 +19,9 @@ spring:
     stream:
       bindings:
         compressImage-in-0:
-          destination: storage.event.image-created
-        compressImage-out-0:
           destination: compression.event.compressed-image
+        compressImage-out-0:
+          destination: color.event.color-filter-image
 eureka:
   client:
     serviceUrl:
