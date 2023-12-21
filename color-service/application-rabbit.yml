@@ -18,9 +18,9 @@ spring:
   cloud:
     stream:
       bindings:
-        compressImage-in-0:
+        colorFilter-function-in-0:
           destination: compression.event.compressed-image
-        compressImage-out-0:
+        colorFilter-function-in-0:
           destination: color.event.color-filter-image
 eureka:
   client:
