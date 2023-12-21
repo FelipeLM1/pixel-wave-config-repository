@@ -21,7 +21,6 @@ image:
     directory: uploads/
 server:
   servlet:
-    context-path: /rabbit/pixelwave/api/storage
   port: "8080"
 eureka:
   client:
