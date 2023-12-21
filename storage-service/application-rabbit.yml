@@ -29,7 +29,6 @@ image:
   storage:
     directory: uploads/
 server:
-  servlet: null
   port: "8080"
 eureka:
   client:
