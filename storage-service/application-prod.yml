@@ -1,7 +1,7 @@
 spring:
   flyway:
-    enabled: 'true'
-    validate-on-migrate: 'true'
+    enabled: "true"
+    validate-on-migrate: "true"
     locations: classpath:db/migration/prod,classpath:db/migration/dev
   jpa:
     properties:
@@ -9,21 +9,31 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: validate
-    show-sql: 'true'
+    show-sql: "true"
   application:
     name: storage-service-prod
   datasource:
-    password: pixelwave
-    username: pixelwave
-    url: jdbc:postgresql://localhost:5440/pixelwave
+    password: "123"
+    username: postgres
+    url: jdbc:postgresql://localhost:5441/postgres
 image:
   storage:
     directory: uploads/
 server:
   servlet:
-    context-path: /prod/pixelwave/api/storage
-  port: '8080'
+    context-path: /rabbit/pixelwave/api/storage
+  port: "8080"
 eureka:
   client:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka
+rabbitmq:
+    username: rabbitmq
+    password: rabbitmq
+    host: localhost
+    port: 5672
+  cloud:
+    stream:
+      bindings:
+        imageCreatedSupplier-out-0: ## Nome do BEAN
+          destination: storage.event.image-created
