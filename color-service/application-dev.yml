@@ -1,7 +1,7 @@
 server:
   servlet:
     context-path: /dev/pixelwave/api/color
-  port: '8083'
+  port: ${PORT:8083}
   
 management:
   health:
