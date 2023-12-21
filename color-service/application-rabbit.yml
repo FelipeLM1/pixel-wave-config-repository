@@ -20,7 +20,7 @@ spring:
       bindings:
         colorFilter-function-in-0:
           destination: compression.event.compressed-image
-        colorFilter-function-in-0:
+        colorFilter-function-out-0:
           destination: color.event.color-filter-image
 eureka:
   client:
