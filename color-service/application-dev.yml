@@ -4,14 +4,20 @@ server:
   port: ${PORT:8083}
   
 management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
   health:
     circuitbreakers:
-      enabled: true
+      enabled: true  
   endpoint:
     health:
       enabled: true
       show-details: always
-
+    refresh:
+      enabled: true  
+      
 resilience4j.circuitbreaker:
   instances:
     storage-service:
