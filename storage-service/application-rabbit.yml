@@ -29,7 +29,8 @@ spring:
     url: jdbc:postgresql://localhost:5441/postgres
 image:
   storage:
-    directory: uploads/
+    directory: minhaPropriedade: ${STORAGE_PATH:uploads/}
+
 server:
   port: "8080"
 eureka:
