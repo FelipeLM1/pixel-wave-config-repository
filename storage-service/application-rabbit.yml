@@ -10,6 +10,8 @@ spring:
       bindings:
         imageCreatedSupplier-out-0:
           destination: storage.event.image-created
+        saveProcessedImage-in-0:
+          destination: format.event.format-image
   flyway:
     enabled: "true"
     validate-on-migrate: "true"
