@@ -1,0 +1,23 @@
+server:
+  servlet:
+    context-path: /rabbit/pixelwave/api/color
+  port: "8083"
+management:
+  health:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        applyColorFilter-in-0:
+          destination: compression.event.compressed-image
+        applyColorFilter-out-0:
+          destination: color.event.color-filter-image
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka

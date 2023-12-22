@@ -1,0 +1,23 @@
+server:
+  servlet:
+    context-path: /rabbit/pixelwave/api/format
+  port: "8082"
+management:
+  health:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        formatImage-in-0:
+          destination: color.event.color-filter-image
+        formatImage-out-0:
+          destination: format.event.format-image
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
