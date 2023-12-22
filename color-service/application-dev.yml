@@ -62,6 +62,6 @@ resilience4j.thread-pool-bulkhead:
 resilience4j.ratelimiter:
   instances:
     storage-service:
-      limitForPeriod: 10
+      limitForPeriod: 100
       limitRefreshPeriod: 500ms
       timeoutDuration: 3s
