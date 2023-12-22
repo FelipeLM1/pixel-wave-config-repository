@@ -13,9 +13,9 @@ spring:
   application:
     name: storage-service
   datasource:
-    password: pixelwave
-    username: pixelwave
-    url: jdbc:postgresql://localhost:5440/pixelwave
+    password: postgres
+    username: 123
+    url: jdbc:postgresql://localhost:5440/postgres
 image:
   storage:
     directory: uploads/
