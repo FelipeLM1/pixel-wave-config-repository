@@ -20,8 +20,8 @@ image:
   storage:
     directory: uploads/
 server:
-  port: "8080"
+  port: ${PORT:8080}
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://discovery-service:8761/eureka/

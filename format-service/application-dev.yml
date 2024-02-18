@@ -1,8 +1,11 @@
 server:
   servlet:
     context-path: /dev/pixelwave/api/format
-  port: '8082'
-  
+  port: ${PORT:8082}
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka/
 management:
   health:
     circuitbreakers:
@@ -59,4 +62,3 @@ resilience4j.ratelimiter:
       limitForPeriod: 100
       limitRefreshPeriod: 500ms
       timeoutDuration: 3s
-      

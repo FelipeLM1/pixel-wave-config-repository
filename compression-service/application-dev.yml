@@ -1,7 +1,11 @@
 server:
   servlet:
     context-path: /dev/pixelwave/api/compression
-  port: "8081"
+  port: ${PORT:8081}
+eureka:
+  client:
+    service-url:
+      defaultZone: http://discovery-service:8761/eureka/
 management:
   health:
     circuitbreakers:
